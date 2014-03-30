@@ -1,0 +1,25 @@
+<library>
+ <properties forceSquare="0" alphaThreshold="0" extrude="0" padding="1" showUnusedAreas="0" removeAlphaBorder="0"/>
+ <file file="creditname.png"/>
+ <file file="creditbg.png"/>
+ <file file="creditbtn.png"/>
+ <file file="levelplay.png"/>
+ <file file="block.png"/>
+ <file file="levelbtn.png"/>
+ <file file="maintitle.png"/>
+ <file file="settingtitle.png"/>
+ <file file="settingbtn.png"/>
+ <file file="settingbg.png"/>
+ <file file="playbtn.png"/>
+ <file file="mainmenubg.png"/>
+ <file file="leveltitle.png"/>
+ <file file="levelbg.png"/>
+ <file file="homebtn.png"/>
+ <file file="backbtn.png"/>
+ <file file="6.png"/>
+ <file file="5.png"/>
+ <file file="4.png"/>
+ <file file="3.png"/>
+ <file file="2.png"/>
+ <file file="1.png"/>
+</library>

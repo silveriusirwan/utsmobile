@@ -1,0 +1,69 @@
+<project>
+ <properties autorotation="0" encryptAssets="0" fps="60" scaleMode="3" mouseToTouch="1" iosDevice="0" packageName="com.yourdomain.yourapp" logicalHeight="960" logicalWidth="540" mouseTouchOrder="0" encryptCode="0" retinaDisplay="0" touchToMouse="1" assetsOnly="0" orientation="0" architecture="0">
+  <imageScales/>
+ </properties>
+ <file source="Credit.lua"/>
+ <file source="result.lua"/>
+ <folder name="level">
+  <file source="level/level12.txt"/>
+  <file source="level/level11.txt"/>
+  <file source="level/level10.txt"/>
+  <file source="level/level9.txt"/>
+  <file source="level/level8.txt"/>
+  <file source="level/level7.txt"/>
+  <file source="level/level6.txt"/>
+  <file source="level/level5.txt"/>
+  <file source="level/level4.txt"/>
+  <file source="level/level3.txt"/>
+  <file source="level/level2.txt"/>
+  <file source="level/level1.txt"/>
+ </folder>
+ <file source="LevelSelect.lua"/>
+ <file source="Setting.lua"/>
+ <file source="MainMenu.lua"/>
+ <folder name="asset">
+  <file source="asset/vintage.ttf"/>
+  <file source="asset/lvlfail.mp3"/>
+  <file source="asset/lvlcomplete.mp3"/>
+  <file source="asset/sad.png"/>
+  <file source="asset/highscore.png"/>
+  <file source="asset/happy.png"/>
+  <file source="asset/swap.mp3"/>
+  <file source="asset/splash.mp3"/>
+  <file source="asset/levelplay.png"/>
+  <file source="asset/6splash.png"/>
+  <file source="asset/5splash.png"/>
+  <file source="asset/4splash.png"/>
+  <file source="asset/3splash.png"/>
+  <file source="asset/2splash.png"/>
+  <file source="asset/1splash.png"/>
+  <file source="asset/number.ttf"/>
+  <file source="asset/sliderpill.png"/>
+  <file source="asset/sliderbar.png"/>
+  <file source="class/slider.lua"/>
+  <file source="asset/fx1.mp3"/>
+  <file source="asset/music1.mp3"/>
+  <file source="asset/font24.txt"/>
+  <file source="asset/font24.png"/>
+  <file source="asset/check_tick.png"/>
+  <file source="asset/check_box.png"/>
+  <file source="asset/fs.ttf"/>
+  <file source="asset/texture.txt"/>
+  <file source="asset/texture.png"/>
+ </folder>
+ <folder name="class">
+  <file source="class/Solution.lua"/>
+  <file source="Level.lua"/>
+  <file source="class/Fruit.lua"/>
+  <file source="class/settings.lua"/>
+  <file source="class/dataSaver.lua"/>
+  <file source="class/checkBbox.lua"/>
+  <file source="class/TextWrap.lua"/>
+  <file source="class/scenemanager.lua"/>
+  <file source="class/gtween.lua"/>
+  <file source="class/easing.lua"/>
+  <file source="class/button.lua"/>
+ </folder>
+ <file source="main.lua"/>
+ <file source="Play.lua"/>
+</project>
