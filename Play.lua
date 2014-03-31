@@ -111,6 +111,9 @@ function Play:init()
 	self.xMax = self.xMin + tonumber(gridW)*50
 	self.yMax = self.yMin + tonumber(gridH)*50
 	self.start = 0;	
+	self.levelText = TextField.new(fontFormat3,"Level : "..lvl)
+	self.levelText:setPosition(180,100)
+	self:addChild(self.levelText)
 	for i=1,self.boardH do
 		self.board[i]={}
 		self.fruitList[i]={}

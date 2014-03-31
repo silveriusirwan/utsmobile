@@ -6,7 +6,7 @@ function Fruit:init(buah,i,j)
 	self.buah=buah
 	self.fruitimg= Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion(buah..".png"))
 	self.fruitimg:setAnchorPoint(0.5,0.5)
-	self.splashimg= Bitmap.new(Texture.new("asset/"..buah.."splash.png"))
+	self.splashimg= Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion(buah.."splash.png"))
 	self.splashimg:setAnchorPoint(0.5,0.5)
 	self:addChild(self.fruitimg)
 end

@@ -1,17 +1,17 @@
 result = gideros.class(Sprite)
 
 function result:init()
-	self.bgimage = Bitmap.new(Texture.new("asset/levelplay.png"))
+	self.bgimage = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("levelplay.png"))
 	self:addChild(self.bgimage)
 	self.bgimage:setPosition(270,0)
 	self.bgimage:setAnchorPoint(0.5,0)
-	self.sadimg = Bitmap.new(Texture.new("asset/sad.png"))
+	self.sadimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("sad.png"))
 	self.sadimg:setPosition(270,200)
 	self.sadimg:setAnchorPoint(0.5,0.5)
-	self.happyimg = Bitmap.new(Texture.new("asset/happy.png"))
+	self.happyimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("happy.png"))
 	self.happyimg:setPosition(270,200)
 	self.happyimg:setAnchorPoint(0.5,0.5)
-	self.hsimg = Bitmap.new(Texture.new("asset/highscore.png"))
+	self.hsimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("highscore.png"))
 	self.hsimg:setPosition(270,570)
 	self.hsimg:setAnchorPoint(0.5,0.5)
 	self.resultText = TextField.new(fontFormat3," ")
@@ -45,9 +45,14 @@ function result:init()
 	end
 	
 	--button to main menu
-	local backButtonimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("backbtn.png")),Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("backbtn.png"))
+	local backButtonimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("backbtn.png"))
 	backButtonimg:setAnchorPoint(0.5,0.5)
 	local backButton = Button.new(backButtonimg)
+	
+	--button to play/retry
+	local retryButtonimg = Bitmap.new(TexturePack.new("asset/texture.txt","asset/texture.png",true):getTextureRegion("retry.png"))
+	retryButtonimg:setAnchorPoint(0.5,0.5)
+	local retryButton = Button.new(retryButtonimg)
 	
 	backButton:addEventListener("click", 
 		function()
@@ -58,24 +63,45 @@ function result:init()
 				channelfx:setVolume(statusvol/100)
 			end
 			sceneManager:changeScene("LevelSelect",1,SceneManager.moveFromLeft,easing.outBack)
-		end)
+	end)
+	
+	retryButton:addEventListener("click", 
+		function()
+			statusfx = settings.getSoundState();
+			statusvol = settings.soundGetVolume();
+			if statusfx==true then
+				channelfx = settings.soundhit:play()
+				channelfx:setVolume(statusvol/100)
+			end
+			sceneManager:changeScene("Play",1,SceneManager.moveFromLeft,easing.outBack)
+	end)
+		
 	local highscore = {}
 	highscore.level = {}
 	if(score>hs[lvl] and rslt==1) then
 		highscore.level[lvl] = score
 		self:addChild(self.hsimg)
-		else
-		highscore.level[lvl] = hs[lvl]
-		backButton:setPosition(270,700)
-	end
-	if(rslt==1) then
 		self.highScoreText = TextField.new(fontFormat3," ")
 		self.highScoreText:setText("High Score Level "..lvl.." : "..highscore.level[lvl])
 		self.highScoreText:setPosition(50,700)
 		self:addChild(self.highScoreText)
-		backButton:setPosition(270,800)
+		backButton:setPosition(150,800)
+		retryButton:setPosition(380,800)
+		else
+		highscore.level[lvl] = hs[lvl]
+		backButton:setPosition(150,700)
+		retryButton:setPosition(380,700)
+	end
+	if(score<=hs[lvl] and rslt==1) then
+		self.highScoreText = TextField.new(fontFormat3," ")
+		self.highScoreText:setText("High Score Level "..lvl.." : "..highscore.level[lvl])
+		self.highScoreText:setPosition(50,570)
+		self:addChild(self.highScoreText)
+		backButton:setPosition(150,680)
+		retryButton:setPosition(380,680)
 	end
 	self:addChild(backButton)
+	self:addChild(retryButton)
 	local i
 	for i=1,12 do
 		if(i~=lvl) then
